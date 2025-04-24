@@ -1,0 +1,34 @@
+@import "./fonts.css";
+@import "tailwindcss";
+
+/* tailwindcss theme configurations  */
+@theme {
+    --font-numan: "Numan", sans-serif;
+    --font-frontegg: "Rethink Sans", sans-serif;
+    --font-beauty: "Gowun Dodum", sans-serif;
+
+    --color-frontegg-accent: rgb(13 170 191);
+    --color-frontegg-attention: rgb(255, 0, 0);
+    --color-frontegg-lightpink: rgb(239, 236, 237);
+    --color-frontegg-button: rgb(0, 0, 85);
+    --color-frontegg-darkred: rgb(113, 0, 0)
+}
+
+html,
+body,
+#root {
+    @apply w-screen h-screen flex flex-col bg-frontegg-lightpink font-frontegg
+}
+
+.rounded-btn {
+    @apply flex justify-center items-center text-center px-2 rounded-full;
+}
+
+.rounded-btn > svg,
+.rounded-btn > img {
+    @apply w-full h-full object-contain;
+}
+
+.accent-btn {
+    @apply bg-frontegg-accent text-white  opacity-90;
+}
