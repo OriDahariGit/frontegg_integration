@@ -8,27 +8,44 @@
     --font-beauty: "Gowun Dodum", sans-serif;
 
     --color-frontegg-accent: rgb(13 170 191);
-    --color-frontegg-attention: rgb(255, 0, 0);
+    --color-frontegg-attention: rgb(241 73 104);
     --color-frontegg-lightpink: rgb(239, 236, 237);
+    --color-frontegg-pinkhover: rgb(203 183 190);
     --color-frontegg-button: rgb(0, 0, 85);
-    --color-frontegg-darkred: rgb(113, 0, 0)
+    --color-frontegg-dark: rgb(118 125 132);
 }
 
-html,
-body,
-#root {
-    @apply w-screen h-screen flex flex-col bg-frontegg-lightpink font-frontegg
-}
 
-.rounded-btn {
-    @apply flex justify-center items-center text-center px-2 rounded-full;
-}
+@layer base {
 
-.rounded-btn > svg,
-.rounded-btn > img {
-    @apply w-full h-full object-contain;
-}
+    html,
+    body,
+    #root {
+        @apply w-screen h-screen flex flex-col bg-frontegg-lightpink font-frontegg;
+    }
+    
+    .rounded-btn {
+        @apply flex justify-center items-center text-center px-2 rounded-full;
+    }
+    
+    .rounded-btn > svg,
+    .rounded-btn > img {
+        @apply w-full h-full object-contain;
+    }
+    
+    .accent-btn {
+        @apply bg-frontegg-accent;
+    }
 
-.accent-btn {
-    @apply bg-frontegg-accent text-white  opacity-90;
+    .dark-btn {
+        @apply bg-frontegg-dark;
+    }
+    
+    .log-btn {
+        @apply flex h-full w-[120px] text-lg font-beauty cursor-pointer text-white  opacity-80;
+    }
+
+    .log-btn:hover {
+        @apply opacity-100
+    }
 }

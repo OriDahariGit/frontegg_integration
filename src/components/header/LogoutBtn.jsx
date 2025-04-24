@@ -9,9 +9,9 @@ const LogOutBtn = () => {
     };
 
     return (
-        <div className='flex h-full rounded-btn bg-frontegg-darkred text-white min-w-[120px] text-lg font-beauty cursor-alias'
+        <div className='log-btn rounded-btn dark-btn'
                 onClick={() => logout()}>
-            Log out
+            Log Out
         </div>
     )
 }

@@ -1,19 +1,26 @@
-import settingsIcon from '../icons/SettingsIcon'
+import { AdminPortal } from '@frontegg/react'
 
 // Components
 import HeaderMenuItem from "./HeaderMenuItem"
+import SettingsIcon from '../icons/SettingsIcon'
+
+const handleSettingsBtnClick = () => {
+  AdminPortal.openHosted()
+}
 
 
 const HeaderMenu = () => {
 
   const menuItems = [
-    ["settings", settingsIcon]
+    ["Settings", SettingsIcon, handleSettingsBtnClick],
   ]
 
   return (
-    <div className="flex h-full gap-2">
-      {menuItems.map((item, idx) => {
-        return (<HeaderMenuItem key={idx} label={item[0]} Icon={settingsIcon} />)
+    <div>
+      {menuItems.map( (item, idx) => {
+        return (
+          <HeaderMenuItem key={idx} label={item[0]} Icon={item[1]} onClick={item[2]} />
+        )
       })}
     </div>
   )

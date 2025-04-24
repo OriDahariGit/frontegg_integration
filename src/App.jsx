@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      { isAuthenticated ? <HomePage /> : <UserPage user={user} /> }
+      { isAuthenticated ? <UserPage user={user} /> : <HomePage /> }
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const LoginBtn = () => {
+const LogInBtn = () => {
   return (
-    <div className='flex h-full rounded-btn accent-btn min-w-[120px] text-lg font-beauty cursor-alias'>
+    <div className='log-btn rounded-btn accent-btn'>
         Sign In / Up
     </div>
   )
 }
 
-export default LoginBtn
+export default LogInBtn
