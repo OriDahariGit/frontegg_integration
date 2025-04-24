@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useAuth } from '@frontegg/react'
+import { useAuthUser } from '@frontegg/react'
 
 // Components
 import defaultImage from '../../assets/egg_96x400.png'
 
 
 const UserProfileImage = () => {
-  const { user } = useAuth()
+  const { user } = useAuthUser()
   const [src, setSrc] = useState(user?.profilePictureUrl)
 
   const updateImageSource = () => {
