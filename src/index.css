@@ -1,4 +1,4 @@
-@import "./fonts.css";
+@import "./assets/fonts.css";
 @import "tailwindcss";
 
 /* tailwindcss theme configurations  */
@@ -12,7 +12,7 @@
     --color-frontegg-lightpink: rgb(239, 236, 237);
     --color-frontegg-pinkhover: rgb(203 183 190);
     --color-frontegg-button: rgb(0, 0, 85);
-    --color-frontegg-dark: rgb(118 125 132);
+    --color-frontegg-dark: rgb(210 118 149);
 }
 
 
@@ -48,4 +48,29 @@
     .log-btn:hover {
         @apply opacity-100
     }
+
+    .textlink {
+        @apply font-bold underline decoration-2 cursor-alias decoration-frontegg-accent transition-[0.2s]
+    }
+
+    .textlink:hover {
+        @apply text-frontegg-attention decoration-frontegg-attention
+    }
+
+    .textlink::after {
+        content: '';
+        display: inline-block;
+        background-image: url('./assets/open_window.svg');
+        background-size: contain;
+        height: 0.9rem;
+        width: 0.9rem;
+        transition: 0.2s;
+        transition-timing-function: ease-out;
+    }
+
+    .textlink:hover::after {
+        height: 1rem;
+        width: 1rem;
+    }
+    
 }
