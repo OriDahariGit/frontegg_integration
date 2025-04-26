@@ -7,7 +7,7 @@ import defaultImage from '@/assets/egg_96x400.png'
 
 const UserProfileImage = ({imageUrl}) => {
   return (
-    <div className={`flex h-full max-h-[160px] aspect-square justify-center items-center rounded-full font-beauty
+    <div className={`flex h-full max-h-[150px] aspect-square justify-center items-center rounded-full font-beauty
             bg-white border-gray-100 border-4 overflow-hidden shadow-sm shadow-gray-400 text-center text-gray-400
             ${imageUrl ? '' : 'p-5'}`}
     >
