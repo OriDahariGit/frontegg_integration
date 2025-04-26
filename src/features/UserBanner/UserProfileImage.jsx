@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from 'react'
-import { useAuthUser } from '@frontegg/react'
-
 // Components
 import defaultImage from '@/assets/egg_96x400.png'
 
