@@ -29,8 +29,8 @@ const UserBanner = () => {
     return (
         <div
             className="flex flex-col w-full h-full max-w-[500px] max-h-[400px] 
-                bg-white p-4 rounded-xl items-center justify-around border-frontegg-accent border-2
-                shadow-frontegg-pinkhover shadow-lg backdrop-blur-xl"
+                bg-white p-4 rounded-xl items-center justify-around border-frontegg-dark border-2
+                border-opacity-25 shadow-frontegg-pinkhover shadow-lg backdrop-blur-xl"
         >
             <UserProfileImage imageUrl={imageURL} />
             <h2 className="text-3xl text-center font-frontegg">
