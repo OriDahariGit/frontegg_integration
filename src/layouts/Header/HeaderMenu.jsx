@@ -1,18 +1,15 @@
-import { AdminPortal } from '@frontegg/react'
 // Components
 import SettingsMenuItem from './SettingsMenuItem'
-import { SettingsIcon } from '@/components/icons'
 
-const handleSettingsBtnClick = () => {
-  AdminPortal.openHosted()
-}
+import SwitchTenantBtn from '../TenantList/SwitchTenantBtn'
 
 
 const HeaderMenu = () => {
 
   return (
-    <div>
+    <div className="inline-flex h-full gap-3">
       <SettingsMenuItem />
+      <SwitchTenantBtn />
     </div>
   )
 }

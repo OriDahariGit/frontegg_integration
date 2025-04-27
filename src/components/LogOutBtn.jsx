@@ -9,7 +9,7 @@ const LogOutBtn = () => {
     };
 
     return (
-        <div className='log-btn rounded-btn dark-btn font-bold'
+        <div className='log-btn rounded-btn dark-btn menu-item'
                 onClick={() => logout()}>
             Log Out
         </div>
