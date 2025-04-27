@@ -1,26 +1,19 @@
 import { AdminPortal } from "@frontegg/react";
 // Components
 import UserInfoItem from "./UserInfoItem";
-import ActionAnchor from "../../components/ActionAnchor";
-import { useSettingsHoverStore } from "../../stores";
-import { shallow } from "zustand/shallow";
 
 
-
-const UserBanner = () => {
-    const setIsTxtHovered = useSettingsHoverStore((state) => ({setIsTxtHovered: state.setIsTxtHovered})
+const SettingsAnchor = () => {
+    return (
+        <span className="textlink" onClick={AdminPortal.openHosted}>
+            Settings
+        </span>
     )
+}
 
-    const SettingsAnchor = () => { return (
-            <ActionAnchor 
-                    clickHandler={AdminPortal.openHosted}
-                    mouseEnterHandler={() => setIsTxtHovered(true)}
-                    mouseLeaveHandler={() => setIsTxtHovered(false)}
-            >
-                Settings
-            </ActionAnchor>
-        )
-    }
+
+const UserBanner = () => {    
+
 
     return (
         <div
@@ -30,9 +23,8 @@ const UserBanner = () => {
                     relative"
         >
             <UserInfoItem />
-            <div className="flex flex-col w-full h-full max-h-[35%] justify-end items-center px-3 py-4 
-                    text-xl text-center font-numan  
-                   "
+            <div className="flex flex-col w-full h-full max-h-[35%] justify-end 
+                    items-center px-3 py-4 text-xl text-center font-numan"
             >
                 <p className="flex flex-wrap gap-x-[0.3rem] justify-center content-end w-full
                          border-frontegg-accent/20 border-[1px] bg-frontegg-callout/20

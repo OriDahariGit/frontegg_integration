@@ -1,26 +1,33 @@
 // Components
-import defaultImage from '@/assets/egg_96x400.png'
-import { useState } from 'react'
+import defaultImage from '@/assets/gangster-egg.png'
+import { useAuth } from '@frontegg/react'
+import { useEffect, useState } from 'react'
 
 
-const UserProfileIcon = ({imageURL}) => {
-  const [isValidImage , setIsValidImage ] = useState(imageURL)
+const UserProfileIcon = () => {
+  const { user } = useAuth()
+  const [imgSrc, setImgSrc] = useState(user?.profilePictureUrl || defaultImage)
 
-  const handleImageError = () => {
-    setIsValidImage(false)
-  }
+  useEffect(() => {
+    setImgSrc(user?.profilePictureUrl || defaultImage)
+  }, [user])
 
   return (
     <div className='flex flex-col h-full max-h-[200px] max-w-[200px] 
         aspect-square justify-center items-center rounded-full font-beauty
         bg-white border-frontegg-lightpink border-4 shadow-md shadow-frontegg-dark'
     >
-      <img src={isValidImage ? imageURL : defaultImage} 
-          className='flex object-contain w-full h-full
-          justigy-center items-center aspect-square rounded-full text-center content-center' 
-          alt="profile picture" 
-          onError={handleImageError}
-      />
+      {imgSrc ? (<img src={imgSrc} 
+        className='flex object-contain w-full h-full
+        justigy-center items-center aspect-square rounded-full text-center' 
+        alt="profile picture" 
+        onError={() => setImgSrc(defaultImage)}
+      />) : (<img src={defaultImage} 
+        className='flex object-contain w-full h-full
+        justigy-center items-center aspect-square rounded-full text-center'
+        alt="default picture"
+        onError={() => setImgSrc(defaultImage)}
+      />)}
     </div>
   )
 }

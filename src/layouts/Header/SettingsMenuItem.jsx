@@ -1,17 +1,15 @@
+import { useEffect, useState } from "react";
 import { AdminPortal } from "@frontegg/react";
 // Components
 import SettingsIcon from "@/components/icons/SettingsIcon";
-import { useSettingsHoverStore } from "@/stores";
-import { useEffect } from "react";
 
 
 const SettingsMenuItem = () => {
-    const { isBtnHovered, isTxtHovered, setIsBtnHovered } = useSettingsHoverStore()
-    let isAnyHovered = isBtnHovered || isTxtHovered
+    const [isBtnHovered, setIsBtnHovered] = useState(false)
 
     useEffect(() => {
-        isAnyHovered = isBtnHovered || isTxtHovered
-    }, [isBtnHovered, isTxtHovered])
+
+    }, [isBtnHovered])
     
 
     return (
@@ -22,11 +20,11 @@ const SettingsMenuItem = () => {
             onMouseLeave={() => {setIsBtnHovered(false)}}
             onClick={() => AdminPortal.openHosted()}
         >
-            <SettingsIcon isHovered={isAnyHovered} />
+            <SettingsIcon isHovered={isBtnHovered} />
             { isBtnHovered ? (
                 <p className={`border-1 bg-white border-frontegg-accent text-center text-black
                     top-9 px-2 text-sm rounded-full absolute shadow-frontegg-pinkhover 
-                    shadow-sm text-nowrap ${isAnyHovered ? 'visible open-tooltip' : 'hidden'}`}
+                    shadow-sm text-nowrap`}
                 >
                     Settings
                 </p>
