@@ -1,8 +1,9 @@
 import { useState, useContext, useEffect } from "react";
 import { AdminPortal } from "@frontegg/react";
 // Components
-import SettingsIcon from "../../components/icons/SettingsIcon";
-import { SettingsHoverContext } from "../../contexts/SettingsHoverContext"
+import SettingsIcon from "@/components/icons/SettingsIcon";
+import { SettingsHoverContext } from "@/contexts/SettingsHoverContext"
+import { useSettingsHover } from "@/stores";
 
 
 const handleSettingsBtnClick = () => {
