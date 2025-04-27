@@ -1,21 +1,21 @@
-import React, { useContext } from "react";
 import { AdminPortal } from "@frontegg/react";
 // Components
-import { SettingsHoverContext } from "../../contexts/SettingsHoverContext";
 import UserInfoItem from "./UserInfoItem";
 import ActionAnchor from "../../components/ActionAnchor";
+import { useSettingsHoverStore } from "../../stores";
+import { shallow } from "zustand/shallow";
 
 
 
 const UserBanner = () => {
-    const { setIsAnchorHovered } = useContext(SettingsHoverContext)
+    const setIsTxtHovered = useSettingsHoverStore((state) => ({setIsTxtHovered: state.setIsTxtHovered})
+    )
 
-    const SettingsAnchor = () => { 
-        return (
+    const SettingsAnchor = () => { return (
             <ActionAnchor 
                     clickHandler={AdminPortal.openHosted}
-                    mouseEnterHandler={() => setIsAnchorHovered(true)}
-                    mouseLeaveHandler={() => setIsAnchorHovered(false)}
+                    mouseEnterHandler={() => setIsTxtHovered(true)}
+                    mouseLeaveHandler={() => setIsTxtHovered(false)}
             >
                 Settings
             </ActionAnchor>

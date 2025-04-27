@@ -1,13 +1,13 @@
 import { create } from 'zustand'
 
 
-const useSettingsHover = create((set) => {
-    return {
-        isHovered: false,
-        invert: () => set(state => ({isHovered: !state})),
-        setTrue: () => set(() => ({isHovered: true})),
-        setFalse: () => set(() => ({isHovered: false}))
-    }
-})
+const useSettingsHoverStore = create((set) => ({
+    isBtnHovered: false,
+    isTxtHovered: false,
 
-export default useSettingsHover;
+    setIsBtnHovered: (value) => set((state) => ({ isBtnHovered: value })),
+    setIsTxtHovered: (value) => set((state) => ({ isTxtHovered: value })),
+}));
+
+
+export default useSettingsHoverStore

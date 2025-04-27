@@ -9,13 +9,13 @@
 
     --color-gradient-green: linear-gradient(90deg, rgba(34, 127, 162, 1) 1%, rgba(87, 199, 133, 0.74) 41%, rgba(237, 221, 83, 0.37) 100%);
 
-    --color-frontegg-accent: rgb(34, 127, 162);
+    --color-frontegg-accent: rgb(1, 142, 162);
     --color-frontegg-secondary: rgb(255 198 198);
     --color-frontegg-attention: rgb(241 73 104);
     --color-frontegg-lightpink: rgb(243 244 244);
     --color-frontegg-shadow: rgb(203 183 190);
     --color-frontegg-callout: rgb(158 222 253);
-    --color-frontegg-dark: rgb(151 140 148);
+    --color-frontegg-dark: rgb(128 125 141);
 }
 
 

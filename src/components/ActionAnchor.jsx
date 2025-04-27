@@ -2,9 +2,9 @@ const ActionAnchor = ({clickHandler, mouseEnterHandler, mouseLeaveHandler, child
     return (
         <span 
             className="textlink inline-block" 
-            onClick={() => clickHandler()}
-            onMouseEnter={() => mouseEnterHandler()}
-            onMouseLeave={() => mouseLeaveHandler()}
+            onClick={clickHandler}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
         >
             {children}
         </span>
