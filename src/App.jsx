@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react'
 // Component
-import Header from './features/Header/Header'
+import Header from '@/layouts/Header/Header'
 import HomePage from './pages/HomePage'
 import UserPage from './pages/UserPage'
 import { SettingsHover } from './contexts/SettingsHoverContext'
