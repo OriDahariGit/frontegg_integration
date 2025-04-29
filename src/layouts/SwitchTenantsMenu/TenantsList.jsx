@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useTenantsActions, useAuth } from '@frontegg/react'
+import { useAuth } from '@frontegg/react'
 import { useTenantsStore } from '@/stores/tenantsMenuStore'
 // Components
 import TenantMenuSlot from './TenantMenuSlot'
@@ -9,7 +9,6 @@ import ErrorMessage from '@/components/ErrorMessage'
 const TenantList = () => {
   const tenants = useTenantsStore(state => state.tenants)
   const setTenants = useTenantsStore(state => state.setTenants)
-  const setSelected = useTenantsStore(state => state.setSelected)
 
   const { tenantsState, isLoading } = useAuth()
 

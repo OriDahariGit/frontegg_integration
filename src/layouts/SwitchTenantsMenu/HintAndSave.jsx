@@ -13,9 +13,9 @@ const HintAndSave = () => {
   }
     
   return (
-    <div className={`flex w-full min-h-slot-height items-center h-full transition-m
+    <div className={`flex w-full min-h-slot-height items-center h-full transition-m 
             ${ selectedTenant || !isOpen ? 'bg-callout/70 cursor-pointer' 
-                : 'cursor-default opacity-70'
+                : 'cursor-default opacity-60'
             }`
           }
           onClick={onClickSwitch(
@@ -26,7 +26,7 @@ const HintAndSave = () => {
           )}
     >
       <div className='flex h-full w-full justify-center items-center  
-                    text-white font-primary text-center text-md transition-0'>
+                    text-white font-primary text-center text-md'>
         {printHintSwitch(selectedTenant, isOpen)
         }
         </div>

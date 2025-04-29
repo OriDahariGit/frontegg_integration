@@ -115,6 +115,13 @@
         50% { background-color: var(--color-frontegg-lightpink); transform: scale(1.1); }
     }
 
+    @keyframes wave {
+        0% { rotate: 0; }
+        25% { rotate: -10; }
+        75% { rotate: 10; }
+        100% {rotate: 0; }
+    }
+
     .attention-flash-bg {
         animation: hintflash 0.5s 2 ease-in-out;
     }
@@ -126,5 +133,10 @@
     .transition-m {
         transition: 0.3s ease-in-out;
     }
+
+    .fillin-waving {
+        animation: wave 0.5 4 ease-in-out both;
+    }
+    
     
 }

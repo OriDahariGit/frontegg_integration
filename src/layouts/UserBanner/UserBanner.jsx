@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useAuth } from '@frontegg/react' 
 // Components
 import UserInfoItem from "./UserInfoItem";
 import UserWelcom from "./UserWelcom";
@@ -7,7 +9,6 @@ import WaveSVG from "@/assets/waving-hand.svg"
 
 const UserBanner = () => {    
 
-
     return (
         <div
             className="flex flex-col w-full h-full max-w-[500px] max-h-[500px] 
@@ -16,7 +17,7 @@ const UserBanner = () => {
                     relative"
         >
             <UserInfoItem />
-            <img className="w-10 aspect-square" src={WaveSVG} />
+            <img className='w-14 aspect-square' src={WaveSVG} />
             <UserWelcom />
         </div>
     );
