@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useTenantsActions, useAuth } from '@frontegg/react'
+import { useAuth } from '@frontegg/react'
 import { useTenantsStore } from '@/stores/tenantsMenuStore'
 // Components
 import TenantMenuSlot from './TenantMenuSlot'
@@ -10,18 +10,13 @@ const TenantList = () => {
   const tenants = useTenantsStore(state => state.tenants)
   const setTenants = useTenantsStore(state => state.setTenants)
 
-  const { loadTenants } = useTenantsActions()
-  const { tenantsState } = useAuth()
+  const { tenantsState, isLoading } = useAuth()
 
   useEffect(() => {
-    loadTenants().then(() => {
+    if (!isLoading) {
       setTenants(tenantsState.tenants)
-    })   
-  }, [setTenants, loadTenants])
-
-  const fetchTenants = async () => {
-    await loadTenants()
-  }
+    }
+  }, [setTenants, tenantsState])
 
   return (
     <div className='flex flex-col w-full h-full'>
