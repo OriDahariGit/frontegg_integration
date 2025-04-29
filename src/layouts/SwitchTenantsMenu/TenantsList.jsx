@@ -9,19 +9,15 @@ import ErrorMessage from '@/components/ErrorMessage'
 const TenantList = () => {
   const tenants = useTenantsStore(state => state.tenants)
   const setTenants = useTenantsStore(state => state.setTenants)
+  const setSelected = useTenantsStore(state => state.setSelected)
 
-  const { loadTenants } = useTenantsActions()
-  const { tenantsState } = useAuth()
+  const { tenantsState, isLoading } = useAuth()
 
   useEffect(() => {
-    loadTenants().then(() => {
+    if (!isLoading) {
       setTenants(tenantsState.tenants)
-    })   
-  }, [setTenants, loadTenants])
-
-  const fetchTenants = async () => {
-    await loadTenants()
-  }
+    }
+  }, [setTenants, tenantsState])
 
   return (
     <div className='flex flex-col w-full h-full'>

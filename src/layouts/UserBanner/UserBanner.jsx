@@ -1,15 +1,8 @@
-import { AdminPortal } from "@frontegg/react";
 // Components
 import UserInfoItem from "./UserInfoItem";
+import UserWelcom from "./UserWelcom";
+import WaveSVG from "@/assets/waving-hand.svg"
 
-
-const SettingsAnchor = () => {
-    return (
-        <span className="textlink" onClick={AdminPortal.openHosted}>
-            Settings
-        </span>
-    )
-}
 
 
 const UserBanner = () => {    
@@ -23,16 +16,8 @@ const UserBanner = () => {
                     relative"
         >
             <UserInfoItem />
-            <div className="flex flex-col w-full h-full max-h-[35%] justify-end 
-                    items-center px-3 py-4 text-xl text-center font-numan"
-            >   
-                <p className="flex flex-wrap gap-x-[0.3rem] justify-center content-end w-full
-                         border-frontegg-accent/20 border-[1px] bg-frontegg-callout/20
-                         py-3 rounded-sm">
-                    To enter the <b>Self Service Portal,</b> click on the <SettingsAnchor /> button at the top
-                    left of the screen
-                </p>
-            </div>
+            <img className="w-10 aspect-square" src={WaveSVG} />
+            <UserWelcom />
         </div>
     );
 };
