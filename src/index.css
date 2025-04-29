@@ -8,15 +8,27 @@
     --font-beauty: "Gowun Dodum", sans-serif;
 
     --color-gradient-green: linear-gradient(90deg, rgba(34, 127, 162, 1) 1%, rgba(87, 199, 133, 0.74) 41%, rgba(237, 221, 83, 0.37) 100%);
-
     --color-frontegg-accent: rgb(1, 142, 162);
     --color-frontegg-secondary: rgb(255 198 198);
     --color-frontegg-attention: rgb(241 73 104);
     --color-frontegg-lightpink: rgb(243 244 244);
     --color-frontegg-shadow: rgb(203 183 190);
     --color-frontegg-callout: rgb(158 222 253);
-    --color-frontegg-dark: rgb(128 125 141);
+    --color-frontegg-dark: rgb(42 60 57);
     --color-frontegg-deepblue: rgb(38, 66, 126);
+    --color-frontegg-blue: rgb(0, 134, 154);
+
+    /* Production  */
+    --font-primary: "Numan", sans-serif;
+    --font-secondary: "Rethink Sans", sans-serif;
+    
+    --color-dark: rgb(42 60 57);
+    --color-tenants-bg: rgb(19, 39, 49);
+    --color-success: rgb(0 255 150);
+    --color-error: rgb(242, 63, 43);
+    --color-callout: rgb(10, 98, 109);
+
+    --color-errortxt: rgb(109, 21, 12);
 }
 
 
@@ -29,7 +41,7 @@
     }
 
     #root {
-        @apply bg-[url(./assets/blur-colors-bg.jpg)] bg-cover;
+        @apply bg-[url(./assets/dark-green-bg.jpg)] bg-cover;
     }
     
     .rounded-btn {
@@ -107,6 +119,10 @@
 
     .open-tooltip {
         animation: fill-in 0.4s ease-out forwards;
+    }
+
+    .selected {
+        @apply bg-success border-b-2 border-yellow-200/70
     }
     
 }

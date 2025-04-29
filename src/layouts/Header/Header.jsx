@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <div className='grid grid-cols-3 w-full h-[50px] justify-between bg-white shadow-sm 
-        shadow-gray-600/20 px-5 py-2 fixed z-40'>
+        shadow-gray-600/20 px-5 py-2 sticky z-40'>
           <div className="flex">
             <HeaderMenu />
           </div>

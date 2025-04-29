@@ -23,10 +23,10 @@ const SettingsMenuItem = () => {
             <SettingsIcon isHovered={isBtnHovered} />
             { isBtnHovered ? (
                 <p className={`border-1 bg-white border-frontegg-accent text-center text-black
-                    top-9 px-2 text-sm rounded-full absolute shadow-frontegg-pinkhover 
-                    shadow-sm text-nowrap`}
+                    absolute top-9 -left-2 px-2 text-sm rounded-full 
+                    shadow-frontegg-pinkhover shadow-sm text-nowrap`}
                 >
-                    Settings
+                    Admin Portal
                 </p>
             ) : null }
         </div>

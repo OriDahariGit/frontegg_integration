@@ -1,8 +1,6 @@
 // Components
 import SettingsMenuItem from './SettingsMenuItem'
 
-import SwitchTenantBtn from '../TenantList/SwitchTenantBtn'
-
 
 const HeaderMenu = () => {
 

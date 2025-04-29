@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div className="App flex flex-col w-full h-full">
         <Header />
-        <div className="flex flex-col w-full h-full items-center justify-center px-10 py-4">
+        <div className="flex flex-col w-full h-full items-center justify-center">
           { isAuthenticated ? <UserPage /> : <HomePage /> }
         </div>
     </div>
