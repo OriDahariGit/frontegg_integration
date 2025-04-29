@@ -9,7 +9,6 @@ import ErrorMessage from '@/components/ErrorMessage'
 const TenantList = () => {
   const tenants = useTenantsStore(state => state.tenants)
   const setTenants = useTenantsStore(state => state.setTenants)
-  const setActiveTenant = useTenantsStore(state => state.setActiveTenant)
 
   const { loadTenants } = useTenantsActions()
   const { tenantsState } = useAuth()
@@ -17,9 +16,8 @@ const TenantList = () => {
   useEffect(() => {
     loadTenants().then(() => {
       setTenants(tenantsState.tenants)
-      setActiveTenant(tenantsState?.activeTenant)
     })   
-  }, [setTenants, setActiveTenant, loadTenants])
+  }, [setTenants, loadTenants])
 
   const fetchTenants = async () => {
     await loadTenants()

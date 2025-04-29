@@ -18,7 +18,7 @@ const TenantMenuSlot = ({tenant}) => {
     <div 
         className={`flex flex-col w-full h-slot-height border-b-1 border-b-lime-100/60 
                     relative text-white/60 hover:text-white/80 justify-center 
-                    font-primary cursor-pointer text-center transition-m
+                    font-primary cursor-pointer text-center transition-m px-10
                     ${selectedTenant?.id === tenant?.id ? 
                           'bg-secondary/35 text-white/100' 
                           : 'bg-frontegg-callout/20'}`}
