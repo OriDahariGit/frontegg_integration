@@ -1,18 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useTenantsActions, useAuth } from '@frontegg/react'
 import { useTenantsStore } from '@/stores/tenantsMenuStore'
 // Components
 import TenantMenuSlot from './TenantMenuSlot'
 import ErrorMessage from '@/components/ErrorMessage'
-
-
-const buildMenu = (tenants) => {
-  return tenants 
-    ? tenants.map((tenant) => <TenantMenuSlot key={tenant.id} tenant={tenant} />)
-    : (<ErrorMessage>
-      No Tenants :(
-    </ErrorMessage>)
-}
 
 
 const TenantList = () => {
@@ -39,6 +30,15 @@ const TenantList = () => {
       {buildMenu(tenants)}
     </div>
   )
+}
+
+// Helpers
+const buildMenu = (tenants) => {
+  return tenants 
+    ? tenants.map((tenant) => <TenantMenuSlot key={tenant.id} tenant={tenant} />)
+    : (<ErrorMessage>
+      No Tenants :(
+    </ErrorMessage>)
 }
 
 

@@ -10,14 +10,15 @@ const HintAndSave = () => {
   }
     
   return (
-    <div className='flex w-full h-[60px] items-center absolute bottom-0
-                    cursor-pointer'
+    <div className={`flex w-full min-h-[60px] items-center h-full transition-m
+            ${ selectedTenant ? 'bg-callout/50 cursor-pointer font-medium' 
+                : 'cursor-default opacity-70'
+            }`
+          }
           onClick={selectedTenant ? handleSwitchTenant : null}
     >
-      <div className={`flex justify-center text-white font-primary w-full 
-                    h-full items-center text-center text-lg font-bold 
-                    ${ selectedTenant ? 'bg-success cursor-pointer' : 'bg-dark cursor-default'}`}
-      >
+      <div className='flex h-full w-full justify-center items-center  
+                    text-white font-primary text-center text-md'>
         {selectedTenant 
           ? `Switch to ${selectedTenant?.name || 'a new tenant'}`
           : "Choose a tenant to switch into"

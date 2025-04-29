@@ -22,13 +22,15 @@
     --font-primary: "Numan", sans-serif;
     --font-secondary: "Rethink Sans", sans-serif;
     
+    --color-secondary: rgb(217 175 66);
     --color-dark: rgb(42 60 57);
     --color-tenants-bg: rgb(19, 39, 49);
     --color-success: rgb(30 161 107);
     --color-error: rgb(242, 63, 43);
-    --color-callout: rgb(10, 98, 109);
-
+    --color-callout: rgb(23 223 108);
     --color-errortxt: rgb(109, 21, 12);
+
+    --spacing-slot-height: 50px;
 }
 
 
@@ -121,8 +123,8 @@
         animation: fill-in 0.4s ease-out forwards;
     }
 
-    .selected {
-        @apply bg-success border-b-2 border-yellow-200/70
+    .transition-m {
+        transition: 0.3s ease-in-out;
     }
     
 }
