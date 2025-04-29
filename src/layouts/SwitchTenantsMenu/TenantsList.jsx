@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { useTenantsState } from '@frontegg/react'
+import { useEffect, useState } from 'react'
+import { useTenantsActions, useAuth } from '@frontegg/react'
 import { useTenantsStore } from '@/stores/tenantsMenuStore'
 // Components
 import TenantMenuSlot from './TenantMenuSlot'
@@ -8,25 +8,31 @@ import ErrorMessage from '@/components/ErrorMessage'
 
 const buildMenu = (tenants) => {
   return tenants 
-    ? tenants.map((tenant, idx) => <TenantMenuSlot key={tenant.id} tenant={tenant} />)
+    ? tenants.map((tenant) => <TenantMenuSlot key={tenant.id} tenant={tenant} />)
     : (<ErrorMessage>
-      Couldn't find any tenatns
+      No Tenants :(
     </ErrorMessage>)
 }
 
 
 const TenantList = () => {
-  const { tenants, activeTenant } = useTenantsState()
-  const setTenants = useTenantsStore(state => state?.setTenants)
-  const setActiveTenant = useTenantsStore(state => state?.setActiveTenant)
+  const tenants = useTenantsStore(state => state.tenants)
+  const setTenants = useTenantsStore(state => state.setTenants)
+  const setActiveTenant = useTenantsStore(state => state.setActiveTenant)
+
+  const { loadTenants } = useTenantsActions()
+  const { tenantsState } = useAuth()
 
   useEffect(() => {
-    setTenants(tenants)
-  }, [tenants, setTenants])
+    loadTenants().then(() => {
+      setTenants(tenantsState.tenants)
+      setActiveTenant(tenantsState?.activeTenant)
+    })   
+  }, [setTenants, setActiveTenant, loadTenants])
 
-  useEffect(() => {
-    setActiveTenant(tenants)
-  }, [activeTenant, setActiveTenant])
+  const fetchTenants = async () => {
+    await loadTenants()
+  }
 
   return (
     <div className='flex flex-col w-full h-full'>

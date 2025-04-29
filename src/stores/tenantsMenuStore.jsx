@@ -5,9 +5,13 @@ export const useTenantsStore = create((set) => ({
     selectedTenant: null,
     activeTenant: null,
 
-    setTenants: (tenants) => set(() => {
-        return tenants ? ({tenants}) : {}
-    }),
-    setSelectedTenant: (tenant) => set(() => ({selectedTenant: tenant})),
-    setActiveTenant: (tenant) => set(() => ({activeTenant: tenant}))
+    setTenants: (tenants) => {
+        if (tenants && Array.isArray(tenants)) {
+          set({ tenants });
+        }
+      },
+    
+      setSelectedTenant: (tenant) => set(() => ({ selectedTenant: tenant })),
+    
+      setActiveTenant: (tenant) => set(() => ({ activeTenant: tenant })),
 }))
