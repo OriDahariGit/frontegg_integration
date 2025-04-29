@@ -1,6 +1,5 @@
 # Frontegg IAM Platform Integration ~ React Project ~
 
-
 ---
 
 ## Introduction
